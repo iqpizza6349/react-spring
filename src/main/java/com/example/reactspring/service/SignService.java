@@ -1,6 +1,7 @@
 package com.example.reactspring.service;
 
 import com.example.reactspring.advice.exception.CEmailLoginFailedException;
+import com.example.reactspring.advice.exception.CEmailSignupFailedException;
 import com.example.reactspring.advice.exception.CRefreshTokenException;
 import com.example.reactspring.advice.exception.CUserNotFoundException;
 import com.example.reactspring.config.token.TokenProvider;
@@ -56,7 +57,7 @@ public class SignService {
     @Transactional
     public Long signUp(UserSignUpRequestDto userSignUpRequestDto) {
         if (userRepository.findByEmail(userSignUpRequestDto.getEmail()).isPresent()) {
-            throw new CEmailLoginFailedException();
+            throw new CEmailSignupFailedException();
         }
         return userRepository.save(userSignUpRequestDto.toEntity(passwordEncoder)).getAutoId();
     }

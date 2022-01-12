@@ -26,17 +26,17 @@ public class User extends BaseTimeEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long autoId;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 100)
     private String name;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @Column(nullable = false, length = 25)
+    @Column(nullable = false, length = 100)
     private String password;
 
-    @Column(length = 25)
+    @Column(length = 100)
     private String nickname;
 
     public void updateNickname(String nickname) {
