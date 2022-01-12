@@ -1,7 +1,7 @@
 package com.example.reactspring.config.token;
 
 import com.example.reactspring.advice.exception.CAuthenticationEntryPointException;
-import com.example.reactspring.config.token.dto.TokenDto;
+import com.example.reactspring.entity.security.token.dto.TokenDto;
 import com.example.reactspring.service.CustomUserDetailService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.impl.Base64UrlCodec;

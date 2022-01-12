@@ -1,5 +1,6 @@
-package com.example.reactspring.entity;
+package com.example.reactspring.entity.user;
 
+import com.example.reactspring.entity.BaseTimeEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

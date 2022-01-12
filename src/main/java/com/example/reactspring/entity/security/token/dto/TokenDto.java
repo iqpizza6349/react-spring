@@ -1,4 +1,4 @@
-package com.example.reactspring.config.token.dto;
+package com.example.reactspring.entity.security.token.dto;
 
 import lombok.*;
 

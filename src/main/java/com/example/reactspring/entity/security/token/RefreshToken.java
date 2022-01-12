@@ -1,4 +1,4 @@
-package com.example.reactspring.entity.security;
+package com.example.reactspring.entity.security.token;
 
 import com.example.reactspring.entity.BaseTimeEntity;
 import lombok.Builder;
