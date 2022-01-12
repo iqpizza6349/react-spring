@@ -30,6 +30,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .httpBasic().disable()
                 .csrf().disable()
+                .authorizeRequests().antMatchers("/api/sign/**").permitAll()   // 로그인, 회원 가입, 토큰 재발급은 security 할 필요 없음
+                .and()
+                .authorizeRequests().antMatchers("/exception/**").permitAll()  // exception은 security 할 필요 없음
+                .anyRequest().authenticated()
+                .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint())

@@ -25,9 +25,7 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String token = tokenProvider.resolveToken((HttpServletRequest) request);
 
-        log.info("[Verifying Token]");
         log.info(((HttpServletRequest) request).getRequestURI());
-
         if (token != null && tokenProvider.validationToken(token)) {
             Authentication authentication = tokenProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
