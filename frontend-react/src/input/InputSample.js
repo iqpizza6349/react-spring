@@ -66,6 +66,8 @@ function InputSample() {
         setName("");
         setNickname("");
         setPassword("");
+        setLoginEmail("");
+        setLoginPassword("");
     };
 
     return (
